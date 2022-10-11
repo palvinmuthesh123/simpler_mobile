@@ -1,0 +1,38 @@
+<ion-header>
+  <div
+    class="free-premium-title ion-padding-bottom ion-padding-top ion-text-center"
+  >
+    <ion-title *ngIf="!newsPremium">Free Video</ion-title>
+    <ion-title *ngIf="newsPremium">Premium Video</ion-title>
+  </div>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{newsTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <iframe
+      id="video-iframe"
+      [src]="satizerUrl(newsBody.daily_video_url)"
+      frameborder="0"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+    >
+    </iframe>
+  </div>
+  <h3>{{newsTitle}}</h3>
+  <p>{{newsDate | date: 'MMM d'}}</p>
+  <p [innerHtml]="newsBody.daily_video_description"></p>
+</ion-content>
+
+<ion-footer class="ion-padding">
+  <div class="d-flex ion-align-items-center ion-justify-content-center" (click)="increase()">
+    <span class="mr-2">Next Video</span>
+    <ion-icon class="text-size-20" name="chevron-forward-sharp"></ion-icon>
+  </div>
+</ion-footer>

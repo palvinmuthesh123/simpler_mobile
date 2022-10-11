@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Enter Room:</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="d-flex ion-align-items-center ion-justify-content-center">
+    <ion-img class="room-img" [src]="getRoomIcon(roomImg)"></ion-img>
+
+    <h3 class="font-size-16">{{roomTitle}}</h3>
+  </div>
+
+  <form (ngSubmit)="loginRoom()" [formGroup]="RoomLoginForm">
+    <ion-item class="text-size-14">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" name="name" placeholder="Your Name" ></ion-input>
+    </ion-item>
+<!--
+    <ion-item class="text-size-14">
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input ngModel type="password" name="password" placeholder="Password" ></ion-input>
+    </ion-item>
+-->
+    <ion-item class="text-size-14">
+      <ion-label position="floating">Tagline</ion-label>
+      <ion-input formControlName="tagline" type="text" name="tagline" placeholder="Optional...i.e. 'John from Chicago'"></ion-input>
+    </ion-item>
+    <!-- routerLink="/menu/room/" -->
+    <ion-button class="m-4" type="submit" shape="round" expand="block"> Enter </ion-button>
+  </form>
+</ion-content>

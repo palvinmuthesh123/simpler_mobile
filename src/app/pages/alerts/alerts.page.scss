@@ -1,0 +1,38 @@
+ion-item:nth-of-type(even) {
+  --ion-background-color: var(--app-secondary-color);
+}
+
+.bookmark-alert {
+  top: 2px;
+  right: 0;
+  z-index: 10;
+  font-size: 24px;
+  float: right;
+}
+.bookmark-icon, .alert-type {
+  color: var(--app-primary-color);
+}
+ion-header ion-toolbar:first-of-type {
+  padding: 10px 0px 0px 0px;
+}
+.datetime-note {
+  float: right;
+}
+ion-item {
+  background: #FFFFFF;
+  border: 0.5px solid #C4C4C4;
+  box-shadow: 0px 10px 35px -10px rgba(64, 59, 75, 0.1);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  padding: 10px 0px 10px 0px;
+}
+.user-image {
+  height: 57px;
+  width: 57px;
+}
+.toolbar-btn-icon {
+  color: var(--app-bg);
+}
+.header-ios ion-toolbar:last-of-type {
+  --border-width : 0px;
+}

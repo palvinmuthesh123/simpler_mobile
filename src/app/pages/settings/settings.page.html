@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Room Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-text class="text-size-18 font-weight-bold"
+          >Settings / Preferences</ion-text
+        >
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label
+          ><strong class="d-block text-size-16">Push Notification</strong>
+          <ion-note class="text-size-14"
+            >Only affects this Room</ion-note
+          ></ion-label
+        >
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+
+    <ion-item-group class="mt-2">
+      <ion-item-divider>
+        <ion-text class="text-size-18 font-weight-bold">Audio / Video</ion-text>
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label><strong class="text-size-16">Audio</strong></ion-label>
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label
+          ><strong class="d-block text-size-16">Video / Screens</strong>
+          <ion-note class="text-size-14"
+            >Turning video off saves mobile data</ion-note
+          ></ion-label
+        >
+        <ion-toggle checked></ion-toggle>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,11 @@
+<h3 class="ion-text-center header-label">Classes</h3>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ng-container *ngFor="let room of tradingRooms">
+      <ion-item (click)="roomLogin(room,room.name, room.iconURL,room.roomID)" [hidden] = "room.memberships" lines="none">
+        <ion-img slot="start" class="classItem-img" loading="lazy" decoding="async" [src]="getRoomIcon(room.iconURL)"></ion-img>
+        <h6 class="text-size-16">{{room.name}}</h6>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>

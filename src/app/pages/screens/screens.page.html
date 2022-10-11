@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+<!--
+    <ion-title text-left *ngIf="mediaService.talkingStr" class="text-size-14">
+      <ion-icon class="micBtn" name="mic-outline"></ion-icon>
+      {{ mediaService.talkingStr }}
+    </ion-title>
+    <ion-title text-left *ngIf="!mediaService.talkingStr" class="text-size-14">(Nobody is talking)</ion-title>
+-->
+<ion-title text-left class="text-size-14">(Nobody is talking)</ion-title>
+</ion-toolbar>
+<!--
+<ion-toolbar>
+
+    <ion-select *ngIf="mediaService.screenSharingUsers.length" slot="end"   (ionChange)="connectToScreenOf($event)" 
+        [(ngModel)]="watchingScreenOf" name="watchingScreenOf">
+        <ion-select-option *ngFor="let pres of mediaService.screenSharingUsers"> 
+          <ion-icon class="mr-1" name="tv-outline"></ion-icon>
+          {{ pres.mediaValue.name }}-{{
+          pres.mediaValue.screenName
+          }}
+        </ion-select-option>
+      </ion-select>
+
+    </ion-toolbar>
+-->
+</ion-header>
+
+<ion-content class="ion-padding">
+<!--
+  <div class="h-100 d-flex ion-align-items-center ion-justify-content-center">
+    <video *ngIf="mediaService.screenSharingUsers.length" 
+    class="ion-align-self-start" 
+    [srcObject]="pStream"
+    autoplay="autoplay"
+      id="webcamScreen" playsinline muted>
+    </video>
+
+    <div *ngIf="!mediaService.screenSharingUsers.length">(Nobody is presenting at the moment)</div>
+  </div>
+-->
+
+  <div class="h-100 d-flex ion-align-items-center ion-justify-content-center">
+    <div>(Nobody is presenting at the moment)</div>
+  </div>
+</ion-content>

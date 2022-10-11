@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>User Info</ion-title>
+    <ion-buttons slot="end">
+      <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="content d-flex ion-align-items-center pt-3 pb-3" *ngFor="let user of userInfo">
+    <img
+      class="m-2 ion-align-self-start"
+      src="https://gravatar.com/avatar/{{user.email}}?d=mm"
+      alt=""
+    />
+    <div class="text-size-13">
+      <p class="p-0 m-1">
+        <strong class="text-size-15">{{user.nick}}</strong>
+        <span class="mention-user ml-2" (click)="doMention(user.nick)">@Mention</span>
+      </p>
+      <p class="p-0 m-1" *ngIf="user.tagline.length"><strong>Tagline:</strong> {{ user.tagline }}</p>
+
+      <div *ngIf="isPresenter">
+        <p class="p-0 m-1" *ngIf="user.emailResp"><strong>Email:</strong> {{user.emailResp}</p>
+        <p class="p-0 m-1"><strong>Current Permissions:</strong> {{permissions || 'regular user'}}</p>
+        <p class="p-0 m-1"><strong>Memberplan:</strong> {{user.memberplan}}</p>
+        <p class="p-0 m-1 mb-3"><strong>Member Since:</strong> {{user.member_start_date || 'n/a'}}</p>
+
+        <p class="p-0 m-1 mt-3">
+          <strong>IP: </strong>
+          <span class="ip-address" (click)="doIPLookUp(user.ipResp)">{{user.ipResp}} (lookup)</span>
+        </p>
+        <p class="p-0 m-1"><strong>Browser:</strong> {{user.browser}}</p>
+        <p class="p-0 m-1"><strong>Stream Server:</strong> {{user.streamServer}}</p>
+        <p class="p-0 m-1"><strong>App Version:</strong> {{user.cver}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3 d-flex ion-wrap ion-justify-content-center ion-align-items-center" *ngIf="isPresenter">
+    <ion-button color="light" (click)="kickUser()"
+      ><ion-icon slot="start" name="trash-outline"></ion-icon> Kick</ion-button
+    >
+    <ion-button color="light" (click)="muteUser()"
+      ><ion-icon name="mic-off-outline"></ion-icon> Mute Audio</ion-button
+    >
+    <ion-button color="light" (click)="muteScreenUser()"
+      ><ion-icon slot="start" name="stop-outline"></ion-icon>Stop
+      Screens</ion-button
+    >
+    <ion-button color="light" (click)="restartScreenUser()"
+      ><ion-icon slot="start" name="reload-outline"></ion-icon>Restart
+      Screens</ion-button
+    >
+    <ion-button color="light" (click)="getDebugLog()"
+      ><ion-icon slot="start" name="menu-outline"></ion-icon>Debug
+      Log</ion-button
+    >
+  </div>
+</ion-content>

@@ -1,0 +1,121 @@
+.app-logo {
+  width: 100%;
+  margin: auto;
+  padding: 35px 10%;
+  height: 308px;
+  background-image: url('../../../assets/img/arrow-removebg-preview.svg');
+  position: relative;
+}
+.app-logo-bg {
+  background-image: url('../../../assets/img/login-blue-bg.png');
+  width: 100%;
+  height: 403px;
+  position: absolute;
+}
+
+ion-content {
+  --ion-background-color: var(--app-secondary-color);
+  --color: var(--app-text-color);
+}
+
+ion-button {
+  --background: var(--app-color);
+  --background-activated : var(--app-color);
+}
+
+ion-item {
+  --ion-background-color: transparent;
+}
+
+ion-item ion-checkbox,
+ion-item ion-label,
+ion-item ion-input {
+  --color: var(--app-text-color);
+}
+
+.item-interactive {
+  --highlight-background: var(--app-color);
+}
+
+.item-has-focus .label-floating {
+  color: var(--app-color);
+}
+
+.has-value {
+  color: var(--app-color);
+  background-color: transparent;
+}
+
+form ion-item:last-of-type {
+  --inner-border-width: 0;
+}
+
+ion-checkbox {
+  --border-color: var(--app-secondary-color);
+  --background-checked: var(--app-color);
+  --border-color-checked: var(--app-color);
+  --checkmark-color: var(--app-secondary-color);
+  --size: 25px;
+}
+
+.cursor {
+  color: #FAFAFA ;
+  cursor: pointer;
+  float: right;
+}
+.login-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--app-text-color);
+}
+
+.input-field {
+  background: var(--app-secondary-color);
+  border: 0.5px solid #E2E3E4;
+  border-radius: 12px;
+  color: var(--app-text-color);
+  font-size: 16px;
+  padding: 10px !important;
+}
+
+.native-input.sc-ion-input-ios {
+  height: 56px !important;
+}
+
+.floating-label {
+  position: relative;
+  left: 15px;
+  top: 12px;
+  z-index: 9;
+  align-self: auto;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--app-text-color);
+  font-size: 12px;
+  padding: 0px 10px;
+  background-color: var(--app-secondary-color);
+}
+.forgot-password {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+  /* White */
+  color: var(--app-text-color);
+}
+
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid var(--app-color);
+}
+.loginform {
+  margin-top: 100px;
+}
+ion-icon.toggle-password {
+  color: #4A4A4A;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  z-index: 2;
+}

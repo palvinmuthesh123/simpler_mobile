@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar animated></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="fetchAlertsMsg()">
+        <ion-icon slot="icon-only" name="reload-outline" class="toolbar-btn-icon"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications-outline" class="toolbar-btn-icon"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="funnel-outline" class="toolbar-btn-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" class="ion-padding">
+  <ion-list lines="none">
+    <p *ngIf="!alertLogs || alertLogs.length==0">Sorry, nothing to show, try adjusting your filters and making sure you are connected to the internet...</p>
+    <ion-item (click)="alertDetails(alertLog)" *ngFor="let alertLog of alertLogs" class="p-relative">
+      <ion-avatar slot="start" class="ion-align-self-start">
+        <img src="https://gravatar.com/avatar/{{alertLog.email}}?d=mm" />
+      </ion-avatar>
+      <div>
+        <p class="mt-0 mb-1"><span class="text-size-13">{{alertLog.time | date: 'medium' }} </span></p>
+        <p class="mt-0 mb-1">
+          <strong class="text-size-16">{{alertLog.user}}: {{alertLog.title}}</strong>
+        </p>
+        <span class="text-size-14 mt-0 mb-2" *ngIf="!alertLog.img" [innerHTML]="alertLog.text"></span>
+        <a *ngIf="alertLog.img"><strong>Image: </strong></a><span class="text-size-14 mt-0 mb-2" *ngIf="alertLog.img" [innerHTML]="alertLog.text"> </span>
+
+        </div>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

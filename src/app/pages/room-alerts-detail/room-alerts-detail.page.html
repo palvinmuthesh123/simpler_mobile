@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="doAlertCopy()">
+      <ion-back-button></ion-back-button>
+      <ion-icon name="copy"></ion-icon>
+    </ion-buttons>
+    <ion-title><b>Alert Detail</b></ion-title>
+    <ion-buttons slot="end" (click)="closeModal()">
+      <ion-icon name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div *ngFor="let alert of alertDetail">
+    <div *ngIf="alert.isImgLink">
+      <img src="{{alert.imgURL}}" class="imageCss"/>
+    </div>
+
+    <div *ngIf="!alert.isImgLink">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/{{alert.email}}?d=mm" />
+      </ion-avatar>
+      <p class="mt-0 mb-1">
+        <strong class="text-size-16">{{alert.user}}: </strong>
+        <span class="text-size-13">{{alert.time | date: 'medium' }} </span>
+      </p>
+      <p [innerHTML]="alert.text"></p>
+    </div>
+  
+    </div>
+
+
+</ion-content>

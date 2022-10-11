@@ -1,0 +1,26 @@
+.news-logo {
+  max-width: 70px;
+  max-height: 23px;
+  vertical-align: middle;
+}
+
+.news-item {
+  border-bottom: 5px solid #ddd;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.news-body {
+  padding: 0 32px;
+}
+
+ion-header ion-toolbar:first-of-type {
+  padding: 10px 0px 0px 0px;
+}
+
+.toolbar-btn-icon {
+  color: var(--app-bg);
+}

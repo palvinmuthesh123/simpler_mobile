@@ -1,0 +1,25 @@
+.content {
+  border-radius: 5px;
+  border: 1px solid var(--app-border-color);
+  box-shadow: 1px 1px 1px 1px var(--app-border-color);
+}
+
+img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.mention-user,
+.ip-address {
+  color: var(--app-schedule-color);
+}
+
+ion-button {
+  flex-basis: 47%;
+  font-size: 10px;
+  margin: 5px;
+}
+
+ion-icon {
+  margin-bottom: 2px;
+}

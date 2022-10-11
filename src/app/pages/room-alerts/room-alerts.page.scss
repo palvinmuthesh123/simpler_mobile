@@ -1,0 +1,14 @@
+ion-item:nth-of-type(even) {
+  --ion-background-color: var(--app-secondary-color);
+}
+ion-item {
+  background: #FFFFFF;
+  border: 0.5px solid #C4C4C4;
+  box-shadow: 0px 10px 35px -10px rgba(64, 59, 75, 0.1);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  padding: 10px 0px 10px 0px;
+}
+.datetime-note {
+  float: right;
+}

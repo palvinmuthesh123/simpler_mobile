@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="content">
+    <div
+      class="d-flex ion-align-items-center ion-justify-content-between p-1 content-header"
+    >
+      <ion-icon
+        (click)="previousSchedule()"
+        class="btn"
+        name="chevron-back-sharp"
+      ></ion-icon>
+
+      <h3 class="text-size-15">{{date | date: 'mediumDate' }}</h3>
+
+      <ion-icon
+        (click)="nextSchedule()"
+        class="btn"
+        name="chevron-forward-sharp"
+      ></ion-icon>
+    </div>
+    <div
+      id="i"
+      *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      class="ion-text-center p-1 mb-1"
+    >
+      <h3 class="font-weight-bold text-size-15 title">
+        John Carter - Eat, Sleep, Trade, Repeat
+      </h3>
+      <ion-note
+        class="font-style-italic d-flex ion-align-items-center ion-justify-content-center pb-2"
+        ><ion-icon class="mr-2 text-size-16" name="time-outline"></ion-icon>
+        <span class="text-size-13">{{date | date: 'MMM d, y, h:mm' }}</span>
+      </ion-note>
+    </div>
+  </div>
+</ion-content>

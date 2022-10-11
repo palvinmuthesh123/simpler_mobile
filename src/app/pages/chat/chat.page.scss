@@ -1,0 +1,25 @@
+.chat-tabs {
+  background-color: var(--app-bg);
+  padding: 6px 16px;
+  color: var(--app-tab-color);
+  text-align: center;
+  z-index: 10;
+}
+
+.chat-tab {
+  margin: 2px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.active-chat-tab {
+  background-color: var(--app-tab-active-color);
+  color: var(--app-bg);
+  border-radius: 8%;
+  font-weight: bold;
+}
+
+.user-badge {
+  margin: 0 2px;
+  font-size: 12px;
+}

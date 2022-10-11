@@ -1,0 +1,36 @@
+<ion-header>
+  <div class="alert-details ion-padding-bottom ion-padding-top ion-text-center">
+    <ion-title>Alert Detail</ion-title>
+  </div>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title>{{alertTitle.slice(0, alertTitle.indexOf('.'))}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="bookmark-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="!imgUrl">
+    <div class="ion-text-center">
+      <img src="https://gravatar.com/avatar/{{authorAvatar}}?d=mm" class="img_avator"/>
+    </div>
+    <p class="mt-1 mb-1">
+      <ion-note class="text-size-13"> {{alertDate | date: 'medium' }} </ion-note>
+    </p>
+    <p class="mt-0 mb-2">
+      <strong class="text-size-16">{{alertAuthor}}: </strong>
+      <span class="text-size-14"
+        >{{alertBody.slice(alertBody.indexOf('.') + 1, alertBody.lenght)}}</span
+      >
+    </p>
+  </div>
+
+  <div *ngIf="imgUrl">
+    <img src="{{imgUrl}}" class="imageCss"/>
+  </div>
+</ion-content>

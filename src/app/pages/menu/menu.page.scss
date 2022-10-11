@@ -1,0 +1,40 @@
+.menu-list {
+    color: var(--app-text-color);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    --padding-top: 0px;
+}
+
+.logout-button {
+    --background: var(--app-color);
+    --background-activated : var(--app-color);
+}
+ion-item {
+    margin-bottom: 10px;
+    --border-color: #E2E3E4;
+}
+.header-label {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: var('--app-text-color');
+    text-align: center;
+    border-bottom: 1px solid #E2E3E4;
+    padding-bottom: 20px;
+}
+ion-button[shape=circle] {
+    --border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--app-primary-text);
+}
+.subheading {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #686777;
+}

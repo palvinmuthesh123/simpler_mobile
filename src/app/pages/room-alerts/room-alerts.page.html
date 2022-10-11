@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="showSearchbarHandler()"><ion-icon slot="icon-only" name="search-sharp"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar *ngIf="showSearchbar" animated></ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+      <ion-item (click)="!alertLog.isImgLink && alertDetails(alertLog)" *ngFor="let alertLog of alertLogs" class="p-relative">
+        <ion-avatar slot="start" class="ion-align-self-start">
+          <img src="https://gravatar.com/avatar/{{alertLog.email}}?d=mm" />
+        </ion-avatar>
+        <div>
+          <p class="mt-0 mb-1">
+            <strong class="text-size-16">{{alertLog.user}}: </strong>
+            <span class="text-size-13">{{alertLog.time | date: 'medium' }} </span>
+          </p>
+          <span class="text-size-14 mt-0 mb-2" *ngIf="!alertLog.isImgLink" [innerHTML]="alertLog.text"></span>
+          <p *ngIf="alertLog.isImgLink" (click)="alertDetails(alertLog)"><strong>Link: </strong></p><span class="text-size-14 mt-0 mb-2" *ngIf="alertLog.isImgLink" [innerHTML]="alertLog.text"> </span>
+
+          </div>
+      </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer *ngIf="isPresenter">
+  <ion-toolbar>
+    <ion-item>
+      <ion-icon class="mr-2" slot="start" name="create-sharp" (click)="doLargerSendAlert()"></ion-icon>
+
+      <ion-textarea
+        class="text-size-14"
+        placeholder="Type your alert here..."
+        id="textAreaTxt"
+        [(ngModel)]="alertMessage"
+      ></ion-textarea>
+
+      <ion-icon class="ml-2" slot="end" name="send-sharp" (click)="sendAlert(alertMessage)"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

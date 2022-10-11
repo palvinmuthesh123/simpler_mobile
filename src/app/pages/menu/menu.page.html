@@ -1,0 +1,40 @@
+<h3 class="ion-text-center header-label">Settings</h3>
+<ion-content class="ion-padding menu-list">
+  <ion-list>
+    <ion-item class="subheading" lines="none">
+      <ion-text class="text-size-16">account settings</ion-text>
+    </ion-item>
+
+    <ion-item (click)="userPrivacy()">
+      <ion-text class="text-size-16">Privacy</ion-text>
+      <ion-button slot="end" shape="circle" (click)="buttonClicked()">
+        <ion-icon name="arrow-redo"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item (click)="userHelp()">
+      <ion-text class="text-size-16">Help</ion-text>
+      <ion-button slot="end" shape="circle" (click)="buttonClicked()">
+        <ion-icon name="arrow-redo"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item (click)="userAccount()">
+      <ion-text class="text-size-16">Account Information</ion-text>
+      <ion-button slot="end" shape="circle" (click)="buttonClicked()">
+        <ion-icon name="arrow-redo"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item (click)="pushNotificationSettings()">
+      <ion-text class="text-size-16">Push Notifications</ion-text>
+      <ion-icon slot="end" class="ml-1" name="chevron-forward-sharp"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <p class="ion-text-center text-size-13">App Version: <strong>1.0.0 (Android)</strong></p>
+  <br />
+  <ion-button class="m-4 logout-button" type="submit"  expand="block" (click)="logout()">
+    Log Out
+  </ion-button>
+ 
+</ion-content>

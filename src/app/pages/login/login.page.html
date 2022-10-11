@@ -1,0 +1,37 @@
+<ion-content >
+  <div class="app-logo-bg">
+  </div>
+    <div class="app-logo">
+      <ion-img src="./assets/img/simpler-trading-white.svg"></ion-img>
+    </div>
+  <form #form="ngForm" (ngSubmit)="login(form)" method="post" class="loginform">
+    <h3 class="login-title ion-text-center">Log In</h3>
+    
+    <ion-item class="text-size-14" lines="none">
+      <ion-label position="stacked" class="floating-label">Email</ion-label>
+      <ion-input  type="email" name="email" [(ngModel)]="loginval.email" class="input-field"></ion-input>
+    </ion-item>
+
+    <ion-item class="text-size-14" lines="none">
+      <ion-label position="stacked" class="floating-label">Password</ion-label>
+      <ion-input [type]="showPwd ? 'text' : 'password'" name="password" [(ngModel)]=loginval.password class="input-field"></ion-input>
+      <ion-icon slot="end" [name]="pwdIcon" (click)="togglePwd()" class="toggle-password"></ion-icon>
+    </ion-item>
+
+    <p class="ion-text-end pr-4 forgot-password" (click)="doForgotPW()">Forgot your password?</p>
+    <ion-item>
+      <ion-checkbox name="rememberMe" [(ngModel)]="loginval.rememberMe" ></ion-checkbox>
+      <ion-label class="pl-1" >Keep Me Logged In</ion-label>
+    </ion-item>
+
+    <ion-button class="m-4" type="submit"  expand="block">
+      Log In
+    </ion-button>
+    <!-- <p class="ion-text-center text-size-14" (click)="doForgetMe(form)">
+      Not you? Click here to clear saved data
+    </p> -->
+    <p class="ion-text-center text-size-14">
+      New to Simpler? Create Account
+    </p>
+  </form>
+</ion-content>

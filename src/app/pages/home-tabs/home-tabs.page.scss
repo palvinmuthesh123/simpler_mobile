@@ -1,0 +1,13 @@
+ion-tab-bar {
+  --ion-background-color: var(--app-bg);
+  --color: var(--app-tab-color);
+}
+
+ion-tab-button {
+  --color-selected: var(--app-tab-active-color);
+}
+
+ion-badge {
+  --background: var(--app-secondary-color);
+  --color: var(--app-bg);
+}

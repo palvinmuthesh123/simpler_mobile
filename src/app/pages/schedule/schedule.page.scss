@@ -1,0 +1,28 @@
+.btn {
+  font-size: 28px;
+}
+
+.title {
+  color: var(--app-schedule-color);
+}
+
+.content {
+  border-radius: 5px;
+  border: 1px solid var(--app-border-color);
+  box-shadow: 1px 1px 1px 1px var(--app-border-color);
+}
+
+.content-header {
+  position: sticky;
+  top: -14px;
+  z-index: 10;
+  background-color: #fcfcfc;
+}
+
+.content div {
+  border-bottom: 1px dashed var(--app-border-color);
+}
+
+.content div:last-child {
+  border-bottom: none;
+}

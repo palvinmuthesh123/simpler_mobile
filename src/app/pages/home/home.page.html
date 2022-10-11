@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar animated></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="funnel-outline" class="toolbar-btn-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div
+      (click)="newsDetails(newsList,i)"
+      class="news-item"
+      *ngFor="let news of newsList; let i = index"
+    >
+      <ion-item class="ion-padding-start ion-padding-end">
+        <ion-icon slot="start" class="mr-2" name="bookmark-outline"></ion-icon>
+
+        <h3 class="news-title">{{news.post_title}}</h3>
+
+        <ion-icon slot="end" name="chevron-forward-sharp"></ion-icon>
+      </ion-item>
+      <ion-item class="ion-padding-start ion-padding-end">
+        <div class="w-100 d-flex ion-justify-content-between">
+          <img
+            class="news-logo pr-2"
+            src="./assets/img/{{news.feed_name.toLowerCase()}}.svg"
+          />
+
+          <div class="w-100 text-size-12 ion-text-end">
+            <strong [ngClass]="{'ion-hide': !news.access}" class="pr-1"
+              >$</strong
+            >
+            <ion-text>{{news.post_date | date: 'MMM d'}}</ion-text>
+          </div>
+        </div>
+      </ion-item>
+      <p class="news-body">
+        <strong class="pr-1 text-size-14"
+          >{{appConfig.video_owner_xref[+news.post_author]}}:</strong
+        ><span class="text-size-12"
+          >{{news.post_excerpt}}...<a class="pl-1">Watch Video</a>
+        </span>
+      </p>
+    </div>
+  </ion-list>
+</ion-content>
